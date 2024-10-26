@@ -2,8 +2,11 @@ using UnityEngine;
 
 public class Peach : Fruit
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private void OnEnable() {
+        AudioManager.Instance.PlaySound(_SpawnSound);
+    }
+
     protected override void DeathEffect() {
-        print("Death");
+        AudioManager.Instance.PlaySound(_DeathSound);
     }
 }

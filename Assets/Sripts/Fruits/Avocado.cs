@@ -1,6 +1,9 @@
 
 public class Avocado : Fruit {
+    private void OnEnable() {
+        AudioManager.Instance.PlaySound(_SpawnSound);
+    }
     protected override void DeathEffect() {
-        throw new System.NotImplementedException();
+        AudioManager.Instance.PlaySound(_DeathSound);
     }
 }

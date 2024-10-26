@@ -38,7 +38,7 @@ public class FruitSpawner : MonoBehaviour
             UpdateSpawnInterval(0.5f);
         }
         else if (_spawnCount == 100) {
-            UpdateSpawnInterval(0.35f);
+            UpdateSpawnInterval(0.425f);
         }
     }
     private void UpdateSpawnInterval(float newInterval) {

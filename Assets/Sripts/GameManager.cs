@@ -1,8 +1,8 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
     [SerializeField] private TextMeshProUGUI _scoreText;
@@ -17,13 +17,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
+    void FixedUpdate() {
+        if (_score > 0) {
+            _score -= 1;
+        }
         UpdateScore();
+        
     }
 
     public void AddPoints(int points) {
         _score += points;
+        UpdateScore();
+    }
+
+    public void MinusPoints(int points) {
+        _score -= points;
         UpdateScore();
     }
 

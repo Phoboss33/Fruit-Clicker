@@ -1,16 +1,24 @@
+using Unity.VisualScripting;
+using UnityEngine;
 
 
 public class FruitBomb : Fruit, IShowEffects, IExploadeable
 {
+    [SerializeField] private GameObject _sfx;
     public void ExplosionEffect() {
-        print("Exposion");
+        Instantiate(_sfx, transform.position, Quaternion.identity);
+    }
+
+    private void OnEnable() {
+        AudioManager.Instance.PlaySound(_SpawnSound);
     }
 
     public void ShowEffect() {
-        throw new System.NotImplementedException();
+        
     }
 
     protected override void DeathEffect() {
+        AudioManager.Instance.PlaySound(_DeathSound);
         ExplosionEffect();
     }
 }

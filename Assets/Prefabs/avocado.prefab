@@ -101,8 +101,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitName: Avocado
-  points: 150
+  points: 750
   lifeTime: 0.5
+  _DeathSound: {fileID: 8300000, guid: 030e01b05c3c9854e97eaf98470f44c8, type: 3}
+  _SpawnSound: {fileID: 8300000, guid: 53ffe7e981692484fb98493fa6f5885b, type: 3}
 --- !u!65 &9104340920318719650
 BoxCollider:
   m_ObjectHideFlags: 0

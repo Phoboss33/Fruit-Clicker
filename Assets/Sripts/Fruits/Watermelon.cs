@@ -2,12 +2,16 @@
 
 public class Watermelon : Fruit, IShowEffects
 {
+    private void OnEnable() {
+        AudioManager.Instance.PlaySound(_SpawnSound);
+        ShowEffect();
+    }
     public virtual void ShowEffect() {
-        throw new System.NotImplementedException();
+        // здесь можно сделать эффект для арбуза
     }
 
     protected override void DeathEffect() {
-        print("Death");
+        AudioManager.Instance.PlaySound(_DeathSound);
     }
 
 }
